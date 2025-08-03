@@ -218,8 +218,8 @@ require("lazy").setup({
 	  config = function()
 		require('Comment').setup({
 		  opleader = {
-			line = 'gl',      -- визуальный режим: line comment
-			block = 'gb',     -- визуальный режим: block comment
+			line = '<leader>l',      -- визуальный режим: line comment
+			block = '<leader>b',     -- визуальный режим: block comment
 		  },
 		})
 		end
