@@ -252,5 +252,20 @@ require("lazy").setup({
 		  desc = "Diagnostics (Trouble)",
 		},
 	  },
-	}
+	},
+	{
+	  "stevearc/aerial.nvim",
+	  event = "VeryLazy",
+	  dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+	  config = function()
+		require("aerial").setup({
+		  backends = { "treesitter", "lsp", "markdown" },
+		  layout = { min_width = 30 },
+		  show_guides = true,
+		})
+		-- Клавиши
+		vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial (symbols outline)" })
+	  end,
+	},
+
 })
