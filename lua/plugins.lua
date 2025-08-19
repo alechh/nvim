@@ -267,5 +267,25 @@ require("lazy").setup({
 		vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial (symbols outline)" })
 	  end,
 	},
+	{
+	  "akinsho/bufferline.nvim",
+	  version = "*",
+	  dependencies = { "nvim-tree/nvim-web-devicons" },
+	  config = function()
+		require("bufferline").setup({
+		  options = {
+			diagnostics = "nvim_lsp",
+			offsets = {
+			  { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", separator = true }
+			},
+		  },
+		})
+		-- Клавиши
+		vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+		vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
+		vim.keymap.set("n", "<leader>bc", "<cmd>lua require('bufferline').cycle(-1)<CR><cmd>bdelete! #<CR>", { desc = "Close buffer" })
+
+	  end,
+	},
 
 })
