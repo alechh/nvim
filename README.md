@@ -58,6 +58,16 @@ bear -- make
 - Shift + Tab -- предыдущий таб
 - <leader> + bc -- закрыть текущий таб
 
+## Orgmode
+- <leader>oa -- Agenda + search
+    - vd/vw/vm -- Day/Week/Month view
+- <leader>oc -- Capture
+- <leader>or -- Replace item
+- <leader>ois -- Schedule item
+- <leader>oid -- Deadline item
+- cit -- Change TODO state of item
+- <leader>ot -- tag item
+
 ## Стандартные
 - a -- создать файл (в nvim-tree)
 - Ctrl + hjkl -- переместить фокус на другое окно (слева, снизу, сверху, справа)
