@@ -316,6 +316,12 @@ require("lazy").setup({
 			  description = 'Code To-Do',
 			  template = '* TODO [#B] %?\n\n%a\nProposed Solution: ',
 			  target = '~/org/todos.org'
+			},
+			m = {
+			  description = 'Meeting',
+			  template = '* %? \n:Created: %T\n** Attendees\n \n** Notes\n \n** Action Items\n*** TODO [#A] ',
+			  target = '~/org/meetings.org',
+			  datetree = true
 			}
 		  }
 		})
