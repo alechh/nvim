@@ -325,6 +325,16 @@ require("lazy").setup({
 				},
 			  }
 			},
+			n = {
+			  description = 'Notes',
+			  types = {
+				{
+				  type = 'tags',
+				  org_agenda_overriding_header = 'Notes',
+				  org_agenda_files = {'~/org/inbox.org'},
+				},
+			  }
+			},
 		  },
 		  org_capture_templates = {
 			n = {
