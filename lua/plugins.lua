@@ -311,6 +311,11 @@ require("lazy").setup({
 			  description = 'General To-Do',
 			  template = '* TODO [#B] %?\n',
 			  target = '~/org/todos.org'
+			},
+			c = {
+			  description = 'Code To-Do',
+			  template = '* TODO [#B] %?\n\n%a\nProposed Solution: ',
+			  target = '~/org/todos.org'
 			}
 		  }
 		})
