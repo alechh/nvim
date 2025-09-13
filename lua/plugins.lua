@@ -295,6 +295,7 @@ require("lazy").setup({
 		require('orgmode').setup({
 		  org_agenda_files = '~/org/**/*',
 		  org_default_notes_file = '~/org/inbox.org',
+		  org_todo_keywords = {'TODO', 'DOING', '|', 'DONE', 'REJECT'},
 		  org_capture_templates = {
 			n = {
 			  description = 'Note',
