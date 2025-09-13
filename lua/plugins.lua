@@ -293,14 +293,20 @@ require("lazy").setup({
 	  ft = { 'org' },
 	  config = function()
 		require('orgmode').setup({
-		  org_agenda_files = '~/orgfiles/**/*',
-		  org_default_notes_file = '~/orgfiles/refile.org',
+		  org_agenda_files = '~/org/**/*',
+		  org_default_notes_file = '~/org/inbox.org',
 		  org_capture_templates = {
 			n = {
 			  description = 'Note',
 			  template = '* %?\n  %u',
-			  target = '~/orgfiles/refile.org'
+			  target = '~/org/inbox.org'
 			},
+			w = {
+			  description = 'Work log',
+			  template = '* %?',
+			  datetree = true,
+			  target = '~/org/work-log.org'
+			}
 		  }
 		})
 	  end,
