@@ -296,6 +296,30 @@ require("lazy").setup({
 		  org_agenda_files = '~/org/**/*',
 		  org_default_notes_file = '~/org/inbox.org',
 		  org_todo_keywords = {'TODO', 'DOING', '|', 'DONE', 'REJECT'},
+		  org_agenda_custom_commands = {
+			c = {
+			  description = 'Today agenda',
+			  types = {
+				{
+				  type = 'tags_todo',
+				  match = '+TODO="DOING"',
+				  org_agenda_overriding_header = 'Active todos',
+				  org_agenda_todo_ignore_scheduled = 'all',
+				},
+				{
+				  type = 'tags_todo',
+				  match = '+PRIORITY="A"',
+				  org_agenda_overriding_header = 'High priority todos',
+				  org_agenda_todo_ignore_deadlines = 'far',
+				},
+				{
+				  type = 'agenda',
+				  org_agenda_overriding_header = 'Daily agenda',
+				  org_agenda_span = 'day'
+				},
+			  }
+			},
+		  },
 		  org_capture_templates = {
 			n = {
 			  description = 'Note',
