@@ -296,6 +296,12 @@ require("lazy").setup({
 		  org_agenda_files = '~/org/**/*',
 		  org_default_notes_file = '~/org/inbox.org',
 		  org_todo_keywords = {'TODO', 'DOING', '|', 'DONE', 'REJECT'},
+		  org_todo_keyword_faces = {
+			DOING = ':foreground "Cyan" :weight bold',
+			REJECTED = ':foreground "LimeGreen" :weight bold',
+			TODO = ':foreground "GoldenRod" :weight bold',
+			DONE = ':foreground "LimeGreen" :weight bold'
+		  },
 		  org_agenda_custom_commands = {
 			c = {
 			  description = 'Today agenda',
