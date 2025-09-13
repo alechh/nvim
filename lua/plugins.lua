@@ -306,6 +306,11 @@ require("lazy").setup({
 			  template = '* %?',
 			  datetree = true,
 			  target = '~/org/work-log.org'
+			},
+			t = {
+			  description = 'General To-Do',
+			  template = '* TODO [#B] %?\n',
+			  target = '~/org/todos.org'
 			}
 		  }
 		})
