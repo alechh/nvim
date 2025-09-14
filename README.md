@@ -66,6 +66,7 @@ bear -- make
 - <leader>ois -- Schedule item
 - <leader>oid -- Deadline item
 - cit -- Change TODO state of item
+- Ctrl + Space -- Toggle checkbox
 - <leader>ot -- tag item
 
 ## Стандартные
