@@ -306,6 +306,7 @@ require("lazy").setup({
 			TODO = ':foreground "GoldenRod" :weight bold',
 			DONE = ':foreground "LimeGreen" :weight bold'
 		  },
+		  org_adapt_indentation = false,
 		  org_agenda_custom_commands = {
 			c = {
 			  description = 'Today agenda',
