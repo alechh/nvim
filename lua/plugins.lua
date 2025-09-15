@@ -289,9 +289,13 @@ require("lazy").setup({
 	},
 	{
 	  'nvim-orgmode/orgmode',
+	  dependencies = {
+			'nvim-orgmode/org-bullets.nvim',
+	  },
 	  event = 'VeryLazy',
 	  ft = { 'org' },
 	  config = function()
+		require('org-bullets').setup()
 		require('orgmode').setup({
 		  org_agenda_files = '~/org/**/*',
 		  org_default_notes_file = '~/org/inbox.org',
