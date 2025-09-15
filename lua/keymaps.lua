@@ -73,9 +73,14 @@ end
 
 vim.keymap.set('n', '<leader>k', live_grep_with_filter, { desc = 'Live grep с фильтром по паттерну' })
 
+local actions = require("telescope.actions")
 vim.keymap.set('n', '<leader>z', function()
   require('telescope.builtin').buffers({
-    initial_mode = "normal"
+    initial_mode = "normal",
+	attach_mappings = function(_, map)
+		map("n", "d", actions.delete_buffer)
+		return true
+	end,
   })
 end, { desc = 'Find Buffers (Normal mode)' })
 
