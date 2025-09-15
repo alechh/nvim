@@ -310,7 +310,6 @@ require("lazy").setup({
 				  type = 'tags_todo',
 				  match = '+TODO="DOING"',
 				  org_agenda_overriding_header = 'Active todos',
-				  org_agenda_todo_ignore_scheduled = 'all',
 				},
 				{
 				  type = 'tags_todo',
