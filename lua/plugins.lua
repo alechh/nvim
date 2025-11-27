@@ -364,7 +364,7 @@ require("lazy").setup({
 			},
 			m = {
 			  description = 'Meeting',
-			  template = '* %? \n:Created: %T\n** Attendees\n \n** Notes\n \n** Action Items\n*** TODO [#A] ',
+			  template = '* %? \nSCHEDULED: %^t\n** Attendees\n \n** Notes\n \n** Action Items\n*** TODO [#A] ',
 			  target = '~/org/meetings.org',
 			  datetree = true
 			}
