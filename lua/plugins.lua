@@ -371,5 +371,11 @@ require("lazy").setup({
 		  }
 		})
 	  end,
+	},
+	{
+		"folke/snacks.nvim",
+		opts = {
+			indent = { enabled = true },
+		}
 	}
 })
