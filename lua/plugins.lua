@@ -216,6 +216,33 @@ require("lazy").setup({
 	  opts = {},
 	  lazy = false,
 	  config = function()
+		-- Фикс для https://github.com/numToStr/Comment.nvim/issues/517
+		--
+		-- В новых версиях Neovim vim.treesitter.get_parser() может не бросать
+		-- ошибку, а просто молча вернуть nil, если парсер недоступен для
+		-- текущего буфера. Comment.nvim (lua/Comment/ft.lua, функция
+		-- ft.calculate) проверяет только успешность pcall, но не сам parser
+		-- на nil, из-за чего при вызове parser:children() падает с
+		-- невнятной ошибкой "[Comment.nvim] nil" при попытке
+		-- закомментировать код. Апстрим-фикс есть (PR #518), но не смёржен
+		-- уже больше двух лет, поэтому патчим локально.
+		local ft = require('Comment.ft')
+		ft.calculate = function(ctx)
+		  local ok, parser = pcall(vim.treesitter.get_parser, vim.api.nvim_get_current_buf())
+		  if not ok or not parser then
+			return ft.get(vim.bo.filetype, ctx.ctype)
+		  end
+
+		  local lang = ft.contains(parser, {
+			ctx.range.srow - 1,
+			ctx.range.scol,
+			ctx.range.erow - 1,
+			ctx.range.ecol,
+		  }):lang()
+
+		  return ft.get(lang, ctx.ctype) or ft.get(vim.bo.filetype, ctx.ctype)
+		end
+
 		require('Comment').setup({
 		  opleader = {
 			line = '<leader>l',      -- визуальный режим: line comment
